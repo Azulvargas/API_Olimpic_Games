@@ -86,7 +86,7 @@ def athletes (nombre:str):
         return{'Error':'Revise los datos ingresados'}
     dic['Nombre']=nombre
     dic['sexo']=filtro['Sex'].values[0]
-    dic['Edad']=int(filtro['Age'].values[0])
+    dic['Edad']=list(filtro['Age'].value_counts().index)
     dic['Pais']=list(filtro['Team'].value_counts().index)
     dic['Juegos']=list(filtro['Games'].value_counts().index)
     dic['Evento']=list(filtro['Event'].value_counts().index)
@@ -97,6 +97,6 @@ def athletes (nombre:str):
     return dic
 
 # %%
-athletes('Edgar Lindenau Aabye')
+athletes('Paavo Johannes Aaltonen')
 
 
