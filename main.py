@@ -44,7 +44,9 @@ def medals():
     medal = df['Medal'].value_counts()
     dic={}
     for i in range(len(medal)):
-        dic[medal.index[i]]=medal.values[i]
+        dic[medal.index[i]]=int(medal.values[i])
+    return dic
+
 
 # %% [markdown]
 # ## Función medal_country(país)
@@ -71,6 +73,9 @@ def medal_year(year:int):
     for i in range(len(medallas)):
         dic[medallas.index[i]]=int(medallas.values[i])
     return dic
+
+# %%
+medal_year(2020)
 
 # %%
 @app.get("/athletes/{nombre}")
